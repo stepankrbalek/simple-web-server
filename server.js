@@ -1,3 +1,5 @@
+// prompt: potřebuji v node js vytvořil jednoduchý webový server, který poběží na http na portu 80. na serveru bude jednoduchý formulář pro zadání uživatelského jména a hesla.
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
