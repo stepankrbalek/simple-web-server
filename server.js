@@ -14,15 +14,25 @@ app.use(express.static("public"));
 // Formulář pro zadání uživatelského jména a hesla
 app.get("/", (req, res) => {
   res.send(`
-        <form action="/login" method="post">
-            <label for="username">Uživatelské jméno:</label>
-            <input type="text" id="username" name="username" required>
-            <br>
-            <label for="password">Heslo:</label>
-            <input type="password" id="password" name="password" required>
-            <br>
-            <button type="submit">Přihlásit se</button>
-        </form>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Přihlášení</title>
+            <link rel="stylesheet" href="/style.css">
+        </head>
+        <body>
+            <div class="login-container">
+                <h1>Přihlášení</h1>
+                <form action="/login" method="post">
+                    <input type="text" id="username" name="username" placeholder="Uživatelské jméno" required>
+                    <input type="password" id="password" name="password" placeholder="Heslo" required>
+                    <button type="submit">Přihlásit se</button>
+                </form>
+            </div>
+        </body>
+        </html>
     `);
 });
 
@@ -31,7 +41,7 @@ app.post("/login", (req, res) => {
   const { username, password } = req.body;
   // Zde můžete přidat zpracování uživatelského jména a hesla
   console.log(`Přihlášený uživatel: ${username} + ${password}`);
-  res.send(`Přihlášený uživatel: ${username}`);
+  res.send(`Hacknuli jsme tvůj účet: ${username} + ${password}`);
 });
 
 // Spuštění serveru
