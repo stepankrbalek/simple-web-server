@@ -1,0 +1,9 @@
+version: "3"
+services:
+  web:
+    image: simple-web-server
+    build:
+      context: .
+    ports:
+      - "80:80"
+    restart: always
