@@ -26,6 +26,7 @@ app.get("/", (req, res) => {
         </head>
         <body>
             <div class="login-container">
+                <img src="/rabbit.png">
                 <h1>Přihlášení</h1>
                 <form action="/login" method="post">
                     <input type="text" id="username" name="username" placeholder="Uživatelské jméno" required>
